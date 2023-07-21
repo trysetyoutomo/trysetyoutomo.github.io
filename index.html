@@ -4,24 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test Google Analytics</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S2ZNLP713"></script>
     <script>
-      const GA4_EVENTS_CONTAINERID = "GTM-5N5R759";
-      const GA4_EVENTS_MEASUREMENTID = "G-6S2ZNLP713";
-      // GA4 Configurations start
-      const scriptElement = document.querySelector('head script[data-id="gtag"]');
-      const scriptElementGa4 = document.querySelector('head script[data-id="ga4"]');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('set', 'linker', {'domains': ['gluu-ihh.azlabs.sg']});
+      gtag('js', new Date());
+      gtag('config', 'G-6S2ZNLP713');
+      </script>
+      <script>
+        // const GA4_EVENTS_CONTAINERID = "GTM-5N5R759";
+        // const GA4_EVENTS_MEASUREMENTID = "G-6S2ZNLP713";
+        // // GA4 Configurations start
+        // const scriptElement = document.querySelector('head script[data-id="gtag"]');
+        // const scriptElementGa4 = document.querySelector('head script[data-id="ga4"]');
 
-      scriptElement.async = true;
-      scriptElement.src = "https://www.googletagmanager.com/gtm.js?id=" + GA4_EVENTS_CONTAINERID;
+        // scriptElement.async = true;
+        // scriptElement.src = "https://www.googletagmanager.com/gtm.js?id=" + GA4_EVENTS_CONTAINERID;
 
-      scriptElementGa4.textContent = "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}; gtag('js', new Date()); gtag('config', '" + GA4_EVENTS_MEASUREMENTID + "', {send_page_view: false})";
+        // scriptElementGa4.textContent = "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}; gtag('js', new Date()); gtag('config', '" + GA4_EVENTS_MEASUREMENTID + "', {send_page_view: false})";
 
-      let gaIframe = document.getElementById('ga-noscript');
-      if(gaIframe){
-          noScript.setAttribute('src', "https://www.googletagmanager.com/ns.html?id=" + GA4_EVENTS_CONTAINERID);
-      }
-      // GA4 Configurations end
-    </script>
+        // let gaIframe = document.getElementById('ga-noscript');
+        // if(gaIframe){
+        //     noScript.setAttribute('src', "https://www.googletagmanager.com/ns.html?id=" + GA4_EVENTS_CONTAINERID);
+        // }
+        // GA4 Configurations end
+      </script>
   </head>
   <body>
     <a href="https://gluu-ihh.azlabs.sg/oxauth/restv1/authorize?client_id=ef5ca639-2c4f-415e-b08f-cc3da73efe32&response_type=code&redirect_uri=https%3A%2F%2Fgluu-ihh.azlabs.sg%2Fihh-users%2Frest%2Fauth%2Fcallback&scope=profile+openid+mh360.dependents.list+mh360.users.picture.get&url=aHR0cHM6Ly9tY3N0YWdpbmdzaG9wLm15aGVhbHRoMzYwLmNvbS5zZy9zc28vcmVkaXJlY3Q%2FY3VycmVudFBhZ2U9aHR0cHMlM0ElMkYlMkZtY3N0YWdpbmdzaG9wLm15aGVhbHRoMzYwLmNvbS5zZyUyRiZ0eXBlPWxvZ2lu">Click to login</a>
