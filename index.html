@@ -9,9 +9,18 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('set', 'linker', {'domains': ['gluu-ihh.azlabs.sg']});
+      // gtag('set', 'linker', {'domains': ['gluu-ihh.azlabs.sg']});
       gtag('js', new Date());
       gtag('config', 'G-6S2ZNLP713');
+
+      gtag('get', 'G-6S2ZNLP713', 'client_id', (client_id) => {
+        alert(client_id);
+        // Store the client ID in a variable.
+      });
+      gtag('get', 'G-6S2ZNLP713', 'session_id', (session_id) => {
+        alert(session_id);
+        // Store the session ID in a variable.
+      });
       </script>
       <script>
         // const GA4_EVENTS_CONTAINERID = "GTM-5N5R759";
