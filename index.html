@@ -2,26 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S2ZNLP713"></script>
-    <script>
-      let clientID = "";
-      let sessionID = "";
-      let gtagID = "G-6S2ZNLP713";
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', gtagID);
-        gtag('get', gtagID, 'client_id', async (client_id) => {
-            gtag('get', gtagID, 'session_id', async (session_id) => {
-              document.getElementById("login-link").setAttribute("href","http://localhost/trysetyoutomo.github.io/redirect.html?clientId="+client_id+"&sessionId="+session_id);
-            });
-        })
-      </script>
+    <title>Try Setyo Utomo </title>
   </head>
   <body>
-    <a id="login-link" href="">Click to login</a>
+    <div id="app"></div>
+    <script type="module" src="src/main.tsx"></script>
   </body>
 </html>

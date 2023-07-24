@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import './App.css';
+import './App.scss';
 
 
 // Import all of Bootstrap's JS
@@ -21,8 +22,60 @@ import './App.css';
 // `;
 
 
+interface Person {
+  name: string;
+  age: number;
+}
+
 function App() {
-  // const [count, setCount] = useState(0)
+
+  
+  let [listExps, setExperience] = useState([
+    {
+        title : "Senior Frontend Engineer - IdentitiCoders Pte Ltd",
+        periode : "Jan 2020 - Present · 3 yrs 7 mos",
+        location : "Bandung",
+        stacks : ["React.js", "Vue.js"]
+    },
+    {
+      title : "Senior Software Engineer - PT Tower bersama",
+      periode : "Jan 2020 - Present · 3 yrs 7 mos",
+      location : "Bandung",
+      stacks : ["React.js", "Vue.js",                                "php", "framework7","Code Igniter"," Laravel"]
+    },
+    {
+      title : " PT ValueStream Internaison",
+      periode : "Sept 2007  - Feb 2019",
+      location : "Bandung",
+      stacks : ["React.js", "Vue.js", "php", "framework7","Code Igniter"," Laravel"]
+    },
+    {
+      title : " VVFY",
+      periode : "Feb 2015  - July 2017",
+      location : "Bandung",
+      stacks : ["React.js", "Vue.js", "php", "yii"]
+    }
+  ]);
+
+  // setExperience({ ...listExps, {
+  //   title : "Senior Frontend Engineer",
+  //   periode : "29 Januari 2023 - 31 Januari 2024",
+  //   location : "Bandung",
+  //   techStacks : ["React.js", "Vue.js"]
+  // }});
+
+  // useState
+  // setState(
+  //   listExps => ({
+  //     ...listExps,
+  //     title : "Senior Frontend Engineer",
+  //     periode : "29 Januari 2023 - 31 Januari 2024",
+  //     location : "Bandung",
+  //     techStacks : ["React.js", "Vue.js"]
+  //   })
+  // )
+  // console.log(listExps);
+
 
   // React.useEffect(function(){
   //   alert('123');
@@ -35,45 +88,52 @@ function App() {
       Hello World!
     </Title>
   </Wrapper> */}
-    <div className='container'>
-      <div className='row'>
-        <div className='col-12 col-md-6 col-lg-6 ' id="profile-section">
-          <div className='profile-page'>
+  <div className='row'>
+    <div id='header'>
+       <div className='container grid-container'>
+        <div className='row'>
+        <div className='profile-page'>
             <div className='user-name fw-bold h1'>Try Setyo Utomo</div>
             <div className='user-title h5'>Senior Frontend Engineer</div>
           </div>
+        </div>
+       </div>
+    </div>
+  </div>
+    <div className='container'>
+      <div  className='row'>
+        <div className='col-12 col-md-6 col-lg-4 ' id="profile-section">
+  
           <div className='profile-menu'>
             <ul>
-              <li>About</li>
-              <li>Experiences</li>
-              <li>Projects</li>
+              <li><a href='#about'>About</a></li>
+              <li><a href='#experiences'>Experiences</a></li>
+              <li><a href='#awards'>Awards</a></li>
+              <li><a href='#projects'>Projects</a></li>
             </ul>
           </div>
         </div>
-        <div className='col-12 col-md-6 col-lg-6' id='content-section'>
+        <div id='content-section' data-bs-spy="scroll" data-bs-targe ="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="col-12 col-md-6 col-lg-8 scrollspy-example bg-body-tertiary p-3 rounded-2 row" tabIndex="0">
           <div id='about'>
-          Experienced Web Development since 2013
-
-          1. Laravel, Code Igniter, CorelDraw : 5 years + 
-          2. MySQL, PHP, Yii, CSS, HTML : 9 years + 
-          3. Postgree, Delphi, Visual Studio, Phyton, Java, Phyton : 1 year
-          4. Saas,React.js, Vue.js, Figma,Android : 3 years +
-          5. Cordova, Framework 7 : 2 years
-          6. Git : 4 years
+          Experienced Web Development since 2013, pasionate with Programming world, active person that and eager to know latest technology of the Web. 
 
           </div>
           <div id='experiences' className='mt-5 border-red '>
             <ul>
-              <li>
-                <b className='h5 fw-bold'>Senior Frontend Engineer</b>
-                <p className='fw-normal'>Jan 2020 - Present · 3 yrs 7 mos</p>
-                <p className='fw-light'>Singapore, Remote</p>
-                <div className='list-stack-tech'> 
-                  <span className="badge bg-success">React.js</span>
-                  <span className="badge bg-success">Vue.js</span>
-                  <span className="badge bg-success">JQuery</span>
+            {listExps.map((item) => (
+              <li className='experince'>
+                <i className="bi bi-0-circle"></i>
+                <b className='h5 fw-bold'>{item.title}</b>
+                <p className='fw-normal'>{item.periode}</p>
+                <p className='fw-light'>{item.location}</p>
+                <div className='list-stack-tech'>
+                  {item.stacks.map((stack)=> (
+                    <span className="badge bg-success">{stack}</span>
+                  ))} 
                 </div>
               </li>
+            ))}
+
             </ul>
           </div>
           <div id='projects'>
