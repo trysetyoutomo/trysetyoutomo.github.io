@@ -3,6 +3,9 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    origin: 'https://trysetyoutomo.github.io/',
+  }
   // plugins: [react()],
   // server : {
   //   hmr : {

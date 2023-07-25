@@ -22,15 +22,15 @@ import './App.scss';
 // `;
 
 
-interface Person {
-  name: string;
-  age: number;
-}
+// interface Person {
+//   name: string;
+//   age: number;
+// }
 
 function App() {
 
   
-  let [listExps, setExperience] = useState([
+  let [listExps] = useState([
     {
         title : "Senior Frontend Engineer - IdentitiCoders Pte Ltd",
         periode : "Jan 2020 - Present · 3 yrs 7 mos",
@@ -113,7 +113,7 @@ function App() {
             </ul>
           </div>
         </div>
-        <div id='content-section' data-bs-spy="scroll" data-bs-targe ="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="col-12 col-md-6 col-lg-8 scrollspy-example bg-body-tertiary p-3 rounded-2 row" tabIndex="0">
+        <div id='content-section' data-bs-spy="scroll" data-bs-targe ="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="col-12 col-md-6 col-lg-8 scrollspy-example bg-body-tertiary p-3 rounded-2 row" >
           <div id='about'>
           Experienced Web Development since 2013, pasionate with Programming world, active person that and eager to know latest technology of the Web. 
 
