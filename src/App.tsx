@@ -94,7 +94,7 @@ function App() {
         <div className='row'>
         <div className='profile-page'>
             <div className='user-name fw-bold h1'>Try Setyo Utomo</div>
-            <div className='user-title h5'>Senior Frontend Engineer</div>
+            <div className='user-title h5'>Frontend Engineer</div>
           </div>
         </div>
        </div>
