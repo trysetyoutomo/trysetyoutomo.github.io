@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    origin: 'https://trysetyoutomo.github.io/',
+    origin: 'https://trysetyoutomo.github.io/dist',
   }
   // plugins: [react()],
   // server : {
